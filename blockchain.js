@@ -3,16 +3,13 @@ function blockchain()
 	if(typeof entry !== "undefined")
 	{
 		const net = "1234567890ABCDEFGHIJKLMNOPRSTUWXYVQZabcdefghijklmnoprstuwxyvqz@.=_-+*/!#%|";					
-		const net_split = net.split("");					
-		
+		const net_split = net.split("");
 		const entry_split = entry.split("");
-		
 		const net_split_shuffled = net_split
 			.map(value => ({ value, sort: Math.random() }))
 			.sort((a, b) => a.sort - b.sort)
 			.map(({ value }) => value)
 		const net_join = net_split_shuffled.join("");
-		
 		function get_block(entry_Array) 
 		{
 			const net_array = entry_Array[0]
@@ -33,8 +30,6 @@ function blockchain()
 		}
 		const block = get_block([net_split_shuffled, entry_split]);
 		const block_join = block.join("");
-		
-		
 		function bit_leght() 
 		{
 			const block_array = block
@@ -50,8 +45,6 @@ function blockchain()
 		}
 		const bits = bit_leght();
 		const bits_join = bits.join("");
-		
-		
 		function get_bit_block() 
 		{
 			const bit_array = bits
@@ -88,31 +81,13 @@ function blockchain()
 		}
 		const bit_block = get_bit_block();
 		const bit_block_join = bit_block.join("");
-		
 		const btoa_net_join = btoa(net_join);
-		
 		const blockchain = block_join + "." + bit_block_join;
-		
 		const btoa_blockchain = btoa(blockchain);
-		
 		const request_uri = btoa_net_join + btoa_blockchain;
-		
 		const btoa_request_uri = btoa(request_uri);
-		
 		const replace_btoa_request_uri = btoa_request_uri.replace("=","");
-		
 		const path = location.pathname;
-		
 		window.location = path + "?" + redirect + replace_btoa_request_uri;
-		
-//		console.log(net_join)
-//		console.log(entry)
-//		console.log(block_join)
-//		console.log(bits_join)
-//		console.log(bit_block_join)
-//		console.log(blockchain)
-//		console.log(request_uri)
-//		console.log(replace_btoa_request_uri)
 	}
-	
 }
