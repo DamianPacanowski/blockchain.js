@@ -4,8 +4,6 @@ and
 # var redirect
 simple create a .js file and enter below code
 
-in code downloading value is "email_from_terms_and_conditions_of_connection"
-
 	var email_entry = document.getElementById("email_from_terms_and_conditions_of_connection").value;	
 	if(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(email_entry) !== false)
 	{
