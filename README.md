@@ -3,6 +3,7 @@ to start
 and 
 # var redirect
 simple create a .js file and enter below code
+
 in code download variable is "email_from_terms_and_conditions_of_connection"
 
 	var email_entry = document.getElementById("email_from_terms_and_conditions_of_connection").value;	
