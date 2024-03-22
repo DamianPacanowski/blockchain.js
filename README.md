@@ -12,7 +12,12 @@ simple create a .js file and enter
 	}
 	else
 	{
-		document.getElementById("email_from_terms_and_conditions_of_connection").style.border= "1px solid rgb(255,0,0)";
-		document.getElementById("email_from_terms_and_conditions_of_connection").style.color= "rgb(255,0,0)";
-		document.getElementById("error").style.display= "block";
+		console.log(net_join)
+		console.log(entry)
+		console.log(block_join)
+		console.log(bits_join)
+		console.log(bit_block_join)
+		console.log(blockchain)
+		console.log(request_uri)
+		console.log(replace_btoa_request_uri)
 	}
