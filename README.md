@@ -4,6 +4,7 @@ https://github.com/DamianPacanowski/blockchain.js/blob/ab6fa2980817ebc6de4b15c17
 add the code below
 
  	<input type="text" name="email_from_terms_and_conditions_of_connection">
+  	<button onclick="blockchain();">BLOCKCHAIN</button>
   	<script>
 		var email_entry = document.getElementById("email_from_terms_and_conditions_of_connection").value;	
 		if(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(email_entry) !== false)
