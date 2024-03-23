@@ -1,8 +1,4 @@
-to start 
-# var entry 
-and 
-# var redirect
-simple create enter below code
+
 
  	<input type="text" name="email_from_terms_and_conditions_of_connection">
   	<script>
