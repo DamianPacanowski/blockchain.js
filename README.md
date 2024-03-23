@@ -1,8 +1,9 @@
 download the blockchain.js file and place it on the server
+download link below
 https://github.com/DamianPacanowski/blockchain.js/blob/ab6fa2980817ebc6de4b15c1765d4ec4a289c710/blockchain.js
-remember to overwrite the correct path to the blockchain.js file, it is set to the main folder by default
 
 add the code below add the code below where you want it to work
+remember to overwrite the correct path to the blockchain.js file, it is set to the main folder by default
 
  	<input type="text" name="email_from_terms_and_conditions_of_connection">
   	<button onclick="blockchain();">BLOCKCHAIN JS</button>
