@@ -1,15 +1,14 @@
 function blockchain() 
-{
-	if(typeof entry !== "undefined")
-	{
-		const net = "1234567890ABCDEFGHIJKLMNOPRSTUWXYVQZabcdefghijklmnoprstuwxyvqz@.=_-+*/!#%|";					
-		const net_split = net.split("");
-		const entry_split = entry.split("");
+{	
+	if((typeof entry !== "undefined")&&(typeof net !== "undefined"))
+	{					
+		const net_split = net.split("");							
+		const entry_split = entry.split("");		
 		const net_split_shuffled = net_split
 			.map(value => ({ value, sort: Math.random() }))
 			.sort((a, b) => a.sort - b.sort)
 			.map(({ value }) => value)
-		const net_join = net_split_shuffled.join("");
+		const net_join = net_split_shuffled.join("");		
 		function get_block(entry_Array) 
 		{
 			const net_array = entry_Array[0]
@@ -29,7 +28,7 @@ function blockchain()
 			return block_array;
 		}
 		const block = get_block([net_split_shuffled, entry_split]);
-		const block_join = block.join("");
+		const block_join = block.join("");		
 		function bit_leght() 
 		{
 			const block_array = block
@@ -44,7 +43,7 @@ function blockchain()
 			return bit_Array;
 		}
 		const bits = bit_leght();
-		const bits_join = bits.join("");
+		const bits_join = bits.join("");		
 		function get_bit_block() 
 		{
 			const bit_array = bits
@@ -74,20 +73,20 @@ function blockchain()
 					const npar_no = NPAR_shuffled[bits_element];
 					const replace_npar_no = npar_no.replace(bits_element, npar_no);
 					bit_block_array.push(replace_npar_no);
-				}
-				
+				}				
 			})
 			return bit_block_array;
 		}
 		const bit_block = get_bit_block();
-		const bit_block_join = bit_block.join("");
-		const btoa_net_join = btoa(net_join);
-		const blockchain = block_join + "." + bit_block_join;
-		const btoa_blockchain = btoa(blockchain);
-		const request_uri = btoa_net_join + btoa_blockchain;
-		const btoa_request_uri = btoa(request_uri);
-		const replace_btoa_request_uri = btoa_request_uri.replace("=","");
-		const path = location.pathname;
-		window.location = path + "?" + redirect + replace_btoa_request_uri;
+		const bit_block_join = bit_block.join("");		
+		const btoa_net_join = btoa(net_join);		
+		const blockchain = block_join + "." + bit_block_join;		
+		const btoa_blockchain = btoa(blockchain);		
+		const request_uri = btoa_net_join + btoa_blockchain;		
+		const btoa_request_uri = btoa(request_uri);		
+		const replace_btoa_request_uri = btoa_request_uri.replace("=","");		
+		const path = location.pathname;		
+		window.location = path + redirect + replace_btoa_request_uri;
 	}
 }
+//&copy Created by Damian Pacanowski
