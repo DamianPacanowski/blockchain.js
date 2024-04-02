@@ -1,7 +1,7 @@
 function blockchain() 
 {	
-	if((typeof entry !== "undefined")&&(typeof net !== "undefined"))
-	{					
+	if((typeof entry !== "undefined")&&(typeof net !== "undefined")&&(typeof type !== "undefined"))
+	{				
 		const net_split = net.split("");							
 		const entry_split = entry.split("");		
 		const net_split_shuffled = net_split
@@ -81,8 +81,17 @@ function blockchain()
 		const bit_block_join = bit_block.join("");		
 		const btoa_net_join = btoa(net_join);		
 		const blockchain = block_join + "." + bit_block_join;		
-		const btoa_blockchain = btoa(blockchain);		
-		const request_uri = btoa_net_join + btoa_blockchain;		
+		const btoa_blockchain = btoa(blockchain);
+		if(type==0)
+		{
+			const request_uri = btoa_net_join + btoa_blockchain;	
+		}
+		elseif(type==1)
+		{
+			const request_uri =  btoa_blockchain;
+		}
+			
+		
 		const btoa_request_uri = btoa(request_uri);		
 		const replace_btoa_request_uri = btoa_request_uri.replace("=","");		
 		const path = location.pathname;		
