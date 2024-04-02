@@ -13,6 +13,14 @@ if(document.getElementById("text"))
 else
 {
 	var text = "";
+}
+if(document.getElementById("type"))
+{
+	var type = document.getElementById("type").value;
+}
+else
+{
+	var type = "0";
 }		
 var entry = text;
 var redirect = "?"
