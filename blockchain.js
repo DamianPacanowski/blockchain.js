@@ -1,14 +1,69 @@
 function blockchain() 
 {	
-	if((typeof entry !== "undefined")&&(typeof net !== "undefined")&&(typeof type !== "undefined"))
-	{				
-		const net_split = net.split("");							
-		const entry_split = entry.split("");		
-		const net_split_shuffled = net_split
-			.map(value => ({ value, sort: Math.random() }))
-			.sort((a, b) => a.sort - b.sort)
-			.map(({ value }) => value)
-		const net_join = net_split_shuffled.join("");		
+	if(document.getElementById("net"))
+	{
+		var net = document.getElementById("net").value;
+		if(net=="")
+		{
+			var net = "1234567890ABCDEFGHIJKLMNOPRSTUWXYVQZabcdefghijklmnoprstuwxyvqz@.=_-+*/!#%|";
+		}
+		else
+		{
+			var net_value = document.getElementById("net").value;
+		}
+	}
+	else
+	{
+		var net = "1234567890ABCDEFGHIJKLMNOPRSTUWXYVQZabcdefghijklmnoprstuwxyvqz@.=_-+*/!#%|";
+	}
+	if(document.getElementById("text"))
+	{
+		var text = document.getElementById("text").value;
+		if(text=="")
+		{
+			var text = "blockchain.js";
+		}
+	}
+	else
+	{
+		var text = "blockchain.js";
+	}
+	if(document.getElementById("typex"))
+	{
+		var typex = document.getElementById("typex").value;
+		if(typex=="")
+		{
+			var typex = 0;
+		}
+	}
+	else
+	{
+		var typex = 0;
+	}		
+	var entry = text;
+	var redirect = "?"
+	if(typeof entry !== "undefined")
+	{							
+		var entry_split = entry.split("");				
+		
+		if(net)
+		{
+			var net_split = net.split("");			
+			var net_split_shuffled = net_split		
+				.map(value => ({ value, sort: Math.random() }))
+				.sort((a, b) => a.sort - b.sort)
+				.map(({ value }) => value)
+			var net_join = net_split_shuffled.join("");
+		}
+		if(net_value)
+		{
+			var net_split = net_value.split("");
+			var net_split_shuffled = net_value.split("");
+			var net_join = net_value;
+		}
+		
+		
+		
 		function get_block(entry_Array) 
 		{
 			const net_array = entry_Array[0]
@@ -78,20 +133,19 @@ function blockchain()
 			return bit_block_array;
 		}
 		const bit_block = get_bit_block();
-		const bit_block_join = bit_block.join("");		
-		const btoa_net_join = btoa(net_join);		
+		const bit_block_join = bit_block.join("");
+		if(typex==0)
+		{
+			var btoa_net_join = btoa(net_join);
+		}
+		if(typex==1)
+		{
+			var btoa_net_join = "";
+			document.cookie = "btoa_net_join" + "=" + btoa(net_join) + ";" + 0 + ";path=/";
+		}
 		const blockchain = block_join + "." + bit_block_join;		
-		const btoa_blockchain = btoa(blockchain);
-		if(type==0)
-		{
-			const request_uri = btoa_net_join + btoa_blockchain;	
-		}
-		elseif(type==1)
-		{
-			const request_uri =  btoa_blockchain;
-		}
-			
-		
+		const btoa_blockchain = btoa(blockchain);		
+		const request_uri = btoa_net_join + btoa_blockchain;		
 		const btoa_request_uri = btoa(request_uri);		
 		const replace_btoa_request_uri = btoa_request_uri.replace("=","");		
 		const path = location.pathname;		
