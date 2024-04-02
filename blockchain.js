@@ -61,9 +61,6 @@ function blockchain()
 			var net_split_shuffled = net_value.split("");
 			var net_join = net_value;
 		}
-		
-		
-		
 		function get_block(entry_Array) 
 		{
 			const net_array = entry_Array[0]
