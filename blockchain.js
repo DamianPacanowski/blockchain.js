@@ -143,10 +143,12 @@ function blockchain()
 		const blockchain = block_join + "." + bit_block_join;		
 		const btoa_blockchain = btoa(blockchain);		
 		const request_uri = btoa_net_join + btoa_blockchain;		
-		const btoa_request_uri = btoa(request_uri);		
-		const replace_btoa_request_uri = btoa_request_uri.replace("=","");		
+		const btoa_request_uri = btoa(request_uri);
+		const replace_btoa_request_uri = btoa_request_uri.replace("=","");
+		const replace_btoa_request_uri_link = replace_btoa_request_uri.replace("=","");
+		console.log(replace_btoa_request_uri_link);	
 		const path = location.pathname;		
-		window.location = path + redirect + replace_btoa_request_uri;
+		window.location = path + redirect + replace_btoa_request_uri_link + typex;
 	}
 }
 //&copy Created by Damian Pacanowski
