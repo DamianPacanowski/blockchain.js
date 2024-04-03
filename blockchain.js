@@ -44,8 +44,7 @@ function blockchain()
 	var redirect = "?"
 	if(typeof entry !== "undefined")
 	{							
-		var entry_split = entry.split("");				
-		
+		var entry_split = entry.split("");		
 		if(net)
 		{
 			var net_split = net.split("");			
