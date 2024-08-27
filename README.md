@@ -1,6 +1,5 @@
-download the blockchain.js file and place it on the server
-
-download link https://github.com/DamianPacanowski/blockchain.js/blob/ab6fa2980817ebc6de4b15c1765d4ec4a289c710/blockchain.js
+download the file and place it on the server
+# blockchain.js 
 
 add the code below where you want it to work
 
