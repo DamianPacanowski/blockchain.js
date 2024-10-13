@@ -2,7 +2,6 @@ function blockchain()
 {	
 	if (typeof document !== 'undefined')
 	{
-		
 		var net = document.getElementById("net").value;
 		if(net=="")
 		{
@@ -12,8 +11,6 @@ function blockchain()
 		{
 			var net_value = document.getElementById("net").value;
 		}
-	
-	
 		var text = document.getElementById("text").value;
 		if(text=="")
 		{
@@ -23,8 +20,6 @@ function blockchain()
 		{
 			var text = "blockchain.js";
 		}
-	
-	
 		var typex = document.getElementById("typex").value;
 		if(typex=="")
 		{
@@ -149,7 +144,7 @@ function blockchain()
 		const replace_btoa_request_uri_link = replace_btoa_request_uri.replace("=","");
 		//console.log(replace_btoa_request_uri_link);	
 		const path = location.pathname;		
-		//window.location = path + redirect + replace_btoa_request_uri_link + typex;
+		window.location = path + redirect + replace_btoa_request_uri_link + typex;
 	}
 }
 //&copy Created by Damian Pacanowski
