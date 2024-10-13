@@ -1,7 +1,8 @@
 function blockchain() 
 {	
-	if(document.getElementById("net"))
+	if (typeof document !== 'undefined')
 	{
+		
 		var net = document.getElementById("net").value;
 		if(net=="")
 		{
@@ -11,37 +12,38 @@ function blockchain()
 		{
 			var net_value = document.getElementById("net").value;
 		}
-	}
-	else
-	{
-		var net = "1234567890ABCDEFGHIJKLMNOPRSTUWXYVQZabcdefghijklmnoprstuwxyvqz@.=_-+*/!#%|";
-	}
-	if(document.getElementById("text"))
-	{
+	
+	
 		var text = document.getElementById("text").value;
 		if(text=="")
 		{
 			var text = "blockchain.js";
 		}
-	}
-	else
-	{
-		var text = "blockchain.js";
-	}
-	if(document.getElementById("typex"))
-	{
+		else
+		{
+			var text = "blockchain.js";
+		}
+	
+	
 		var typex = document.getElementById("typex").value;
 		if(typex=="")
+		{
+			var typex = 0;
+		}
+		else
 		{
 			var typex = 0;
 		}
 	}
 	else
 	{
+		var net = "1234567890ABCDEFGHIJKLMNOPRSTUWXYVQZabcdefghijklmnoprstuwxyvqz@.=_-+*/!#%|";
+		var text = "blockchain.js";
 		var typex = 0;
 	}		
 	var entry = text;
 	var redirect = "?"
+	
 	if(typeof entry !== "undefined")
 	{							
 		var entry_split = entry.split("");		
@@ -145,9 +147,9 @@ function blockchain()
 		const btoa_request_uri = btoa(request_uri);
 		const replace_btoa_request_uri = btoa_request_uri.replace("=","");
 		const replace_btoa_request_uri_link = replace_btoa_request_uri.replace("=","");
-		console.log(replace_btoa_request_uri_link);	
+		//console.log(replace_btoa_request_uri_link);	
 		const path = location.pathname;		
-		window.location = path + redirect + replace_btoa_request_uri_link + typex;
+		//window.location = path + redirect + replace_btoa_request_uri_link + typex;
 	}
 }
 //&copy Created by Damian Pacanowski
